@@ -1,0 +1,24 @@
+<div class="register-card">
+  <div class="register-header">
+    <h2>Sohbet Uygulaması Kayıt</h2>
+  </div>
+  <div class="register-body">
+    <p>Kayıt olmak için bilgilerinizi girin</p>
+    
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+    
+    <form (ngSubmit)="register()" class="register-form">
+      <input type="text" class="form-control" [(ngModel)]="registerModel.name" name="name" placeholder="Adınız" required>
+      
+      <input type="password" class="form-control" [(ngModel)]="registerModel.password" name="password" placeholder="Şifreniz" required>
+      
+      <button type="submit" class="register-btn">Kayıt Ol</button>
+    </form>
+    
+    <div class="login-link">
+      <a routerLink="/login">Zaten hesabınız var mı? Giriş yapın</a>
+    </div>
+  </div>
+</div>

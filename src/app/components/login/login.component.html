@@ -1,0 +1,24 @@
+<div class="login-card">
+  <div class="login-header">
+    <h2>Sohbet Uygulaması</h2>
+  </div>
+  <div class="login-body">
+    <p>Sohbete başlamak için giriş yapın</p>
+    
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+    
+    <form (ngSubmit)="login()" class="login-form">
+      <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Adınız" required>
+      
+      <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Şifreniz" required>
+      
+      <button type="submit" class="login-btn">Giriş Yap</button>
+    </form>
+  </div>
+  <div class="login-footer">
+    <p>Henüz üye değil misiniz?</p>
+    <a href="/register" class="register-link">Hemen Kayıt Olun</a>
+  </div>
+</div>
